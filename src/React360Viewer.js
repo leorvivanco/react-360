@@ -439,43 +439,43 @@ class React360Viewer extends Component {
     }
 
     zoomIn = (evt) => {
-        this.setState({ 
-            lastX: this.centerX,
-            lastY: this.centerY
-        })
-        //this.lastY = this.centerY
-        this.zoom(2)
+        // this.setState({ 
+        //     lastX: this.centerX,
+        //     lastY: this.centerY
+        // })
+        // //this.lastY = this.centerY
+        // this.zoom(2)
     }
     zoomOut = (evt) => {
-        this.setState({ 
-            lastX: this.centerX,
-            lastY: this.centerY
-        })
-        this.zoom(-2)
+        // this.setState({ 
+        //     lastX: this.centerX,
+        //     lastY: this.centerY
+        // })
+        // this.zoom(-2)
     }
 
     zoom(clicks){
-        //console.log(this.lastX + ' - ' + this.lastY)
-        let factor = Math.pow(1.01,clicks);
-        //console.log(factor)
-        if(factor > 1){
-            this.currentScale += factor
-        }else{
-            if(this.currentScale-factor > 1)
-                this.currentScale -= factor
-            else
-                this.currentScale = 1
-        }
+        // //console.log(this.lastX + ' - ' + this.lastY)
+        // let factor = Math.pow(1.01,clicks);
+        // //console.log(factor)
+        // if(factor > 1){
+        //     this.currentScale += factor
+        // }else{
+        //     if(this.currentScale-factor > 1)
+        //         this.currentScale -= factor
+        //     else
+        //         this.currentScale = 1
+        // }
         
-        if(this.currentScale > 1){
-            let pt = this.ctx.transformedPoint(this.state.lastX,this.state.lastY);
-            this.ctx.translate(pt.x,pt.y);
+        // if(this.currentScale > 1){
+        //     let pt = this.ctx.transformedPoint(this.state.lastX,this.state.lastY);
+        //     this.ctx.translate(pt.x,pt.y);
             
-            //console.log(this.currentScale)
-            this.ctx.scale(factor,factor);
-            this.ctx.translate(-pt.x,-pt.y);
-            this.redraw();
-        }
+        //     //console.log(this.currentScale)
+        //     this.ctx.scale(factor,factor);
+        //     this.ctx.translate(-pt.x,-pt.y);
+        //     this.redraw();
+        // }
     }
 
     disableZoomin(){
@@ -632,13 +632,13 @@ class React360Viewer extends Component {
     }
 
     handlePinch = (e) => {
-        if (e.scale < this.currentScale) {
-        // zoom in
-            this.zoomIn();
-        } else if (e.scale > this.currentScale) {
-        // zoom out
-            this.zoomOut();
-        }
+        // if (e.scale < this.currentScale) {
+        // // zoom in
+        //     // this.zoomIn();
+        // } else if (e.scale > this.currentScale) {
+        // // zoom out
+        //     // this.zoomOut();
+        // }
 
         //lastScale = e.scale;
     }
@@ -688,14 +688,14 @@ class React360Viewer extends Component {
                                 clicked={this.togglePlay} 
                                 icon={this.state.playing ? 'fa fa-pause' : 'fa fa-play'} 
                             />
-                            <Button 
-                                clicked={this.zoomIn} 
+                            {/* <Button 
+                                // clicked={this.zoomIn} 
                                 icon="fa fa-search-plus" 
                             />
                             <Button 
-                                clicked={this.zoomOut} 
+                                // clicked={this.zoomOut} 
                                 icon="fa fa-search-minus" 
-                            />
+                            /> */}
 
                             {this.state.panmode ? <Button clicked={this.togglePanMode} text="360&deg;"/> : <Button clicked={this.togglePanMode} icon="fa fa-hand-paper"/>}
 

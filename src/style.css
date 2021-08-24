@@ -46,7 +46,6 @@ root {
 /* VIEWER */
 
 #productInsert {
-    background-color: #FFF;
     width: 100%;
     height: calc(100vh - 184px);
     max-height: 768px;
