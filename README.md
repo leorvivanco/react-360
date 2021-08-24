@@ -1,4 +1,4 @@
-# react-360-view
+# react-360-view in es5
 - A Simple and Beautiful 360&deg; Product Viewer built on React
 
 ### [Click here for Vue version](https://github.com/rajeevgade/vue-360)
